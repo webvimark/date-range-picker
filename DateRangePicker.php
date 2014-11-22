@@ -157,21 +157,22 @@ JS
         protected function _mergeParams()
         {
 		$this->_params['locale'] = [
+			'firstDay'         => 1,
 			'fromLabel'        => DateRangePicker::t("app", "FROM"),
 			'toLabel'          => DateRangePicker::t("app", "TO"),
 			'applyLabel'       => DateRangePicker::t("app", "Apply"),
 			'cancelLabel'      => DateRangePicker::t("app", "Cancel"),
 			'customRangeLabel' => DateRangePicker::t("app", "Custom range"),
-			'daysOfWeek' => [
+			'daysOfWeek'       => [
+				DateRangePicker::t("app", 'Su'),
 				DateRangePicker::t("app", 'Mo'),
 				DateRangePicker::t("app", 'Tu'),
 				DateRangePicker::t("app", 'We'),
 				DateRangePicker::t("app", 'Th'),
 				DateRangePicker::t("app", 'Fr'),
 				DateRangePicker::t("app", 'Sa'),
-				DateRangePicker::t("app", 'Su'),
 			],
-			'monthNames' => [
+			'monthNames'       => [
 				DateRangePicker::t("app", 'Jan'),
 				DateRangePicker::t("app", 'Feb'),
 				DateRangePicker::t("app", 'Mar'),
