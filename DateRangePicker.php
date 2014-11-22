@@ -22,7 +22,9 @@ class DateRangePicker extends Widget
         public $selector;
 
         /**
-         * @var string
+	 * For example: can be "PostSearch" as string or $searchModel for PostSearch class
+	 *
+         * @var mixed
          */
         public $model;
 
@@ -103,6 +105,12 @@ class DateRangePicker extends Widget
          */
         public function run()
         {
+		// If $searchModel has been passed instead of string
+		if ( is_object($this->model) )
+		{
+			$this->model = (new \ReflectionClass($this->model))->getShortName();
+		}
+
                 if ( $this->selector )
                 {
                         $this->_selector = $this->selector;
