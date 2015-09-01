@@ -17,6 +17,9 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Current month' => 'Текущий месяц',
+    'Current week' => 'Текущая неделя',
+    'Previous week' => 'Предыдущая неделя',
     '30 days' => '30 дней',
     '7 days' => '7 дней',
     'Apply' => 'Применить',
@@ -42,7 +45,6 @@ return [
     'Su' => 'Вс',
     'TO' => 'ПО',
     'Th' => 'Чт',
-    'This month' => 'Текущий месяц',
     'Today' => 'Сегодня',
     'Tu' => 'Вт',
     'We' => 'Ср',

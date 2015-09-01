@@ -197,23 +197,32 @@ JS
 				),
 				DateRangePicker::t("app","Today") => array(
 					date('Y-m-d', time()),
-					date('Y-m-d', time()) . ' 23:59'
+					date('Y-m-d', strtotime('tomorrow'))
 				),
 				DateRangePicker::t("app","7 days") => array(
-					date('Y-m-d', strtotime('-1 week')),
-					date('Y-m-d', time()) . ' 23:59'
+					date('Y-m-d', strtotime('-7 days 0:00')),
+					date('Y-m-d', strtotime('tomorrow'))
+				),
+
+				DateRangePicker::t("app","Previous week") => array(
+					date('Y-m-d', strtotime('Monday previous week 0:00')),
+					date('Y-m-d', strtotime('Monday this week 0:00'))
+				),
+				DateRangePicker::t("app","Current week") => array(
+					date('Y-m-d', strtotime('Monday this week 0:00')),
+					date('Y-m-d', strtotime('tomorrow'))
 				),
 				DateRangePicker::t("app","30 days") => array(
 					date('Y-m-d', strtotime('-1 month')),
-					date('Y-m-d', time()) . ' 23:59'
+					date('Y-m-d', strtotime('tomorrow'))
 				),
 				DateRangePicker::t("app","Previous month") => array(
 					date('Y-m-d', strtotime('first day of previous month')),
-					date('Y-m-d', strtotime('last day of previous month')) . ' 23:59'
+					date('Y-m-d', strtotime('first day of this month'))
 				),
-				DateRangePicker::t("app","This month") => array(
+				DateRangePicker::t("app","Current month") => array(
 					date('Y-m-d', strtotime('first day of this month')),
-					date('Y-m-d', time()) . ' 23:59'
+					date('Y-m-d', strtotime('first day of next month'))
 				),
 			];
 		}
