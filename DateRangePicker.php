@@ -63,31 +63,6 @@ class DateRangePicker extends Widget
         ];
 
 	/**
-	 * Multilingual support
-	 */
-	public function init()
-	{
-		parent::init();
-		$this->registerTranslations();
-	}
-
-	/**
-	 * Multilingual support
-	 */
-	public function registerTranslations()
-	{
-		$i18n = Yii::$app->i18n;
-		$i18n->translations['widgets/DateRangePicker/*'] = [
-			'class' => 'yii\i18n\PhpMessageSource',
-			'sourceLanguage' => 'en-US',
-			'basePath' => __DIR__ . '/messages',
-			'fileMap' => [
-				'widgets/DateRangePicker/app' => 'app.php',
-			],
-		];
-	}
-
-	/**
 	 * @param string $category
 	 * @param string $message
 	 * @param array  $params
@@ -97,6 +72,18 @@ class DateRangePicker extends Widget
 	 */
 	public static function t($category, $message, $params = [], $language = null)
 	{
+		if ( !isset(Yii::$app->i18n->translations['widgets/DateRangePicker/*']) )
+		{
+			Yii::$app->i18n->translations['widgets/DateRangePicker/*'] = [
+				'class' => 'yii\i18n\PhpMessageSource',
+				'sourceLanguage' => 'en-US',
+				'basePath' => __DIR__ . '/messages',
+				'fileMap' => [
+					'widgets/DateRangePicker/app' => 'app.php',
+				],
+			];
+		}
+
 		return Yii::t('widgets/DateRangePicker/' . $category, $message, $params, $language);
 	}
 
@@ -203,7 +190,6 @@ JS
 					date('Y-m-d', strtotime('-7 days 0:00')),
 					date('Y-m-d', strtotime('tomorrow'))
 				),
-
 				DateRangePicker::t("app","Previous week") => array(
 					date('Y-m-d', strtotime('Monday previous week 0:00')),
 					date('Y-m-d', strtotime('Monday this week 0:00'))
