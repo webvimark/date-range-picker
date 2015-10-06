@@ -6,6 +6,11 @@ use yii\web\AssetBundle;
 
 class DateRangePickerAsset extends AssetBundle
 {
+	public $depends    = [
+		'yii\web\JqueryAsset',
+		'yii\bootstrap\BootstrapAsset',
+	];
+
 	public function init()
 	{
 		$this->sourcePath = __DIR__ . '/assets';
